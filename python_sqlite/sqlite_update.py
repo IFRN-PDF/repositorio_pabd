@@ -35,7 +35,7 @@ def update_task(conn, task):
 
 
 def main():
-    database = r"C:\sqlite\db\pythonsqlite.db"
+    database = "pythonsqlite.db"
 
     # create a database connection
     conn = create_connection(database)
