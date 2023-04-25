@@ -1,4 +1,4 @@
-
+> para funcionar instale a extensāo: https://marketplace.visualstudio.com/items?itemName=bierner.markdown-mermaid
 ```mermaid
 erDiagram
     CAMPUS ||--o{ ALUNO : possui
