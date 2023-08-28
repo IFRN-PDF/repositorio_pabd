@@ -1,0 +1,59 @@
+erdiagram RedeSocial // Modelo de rede social
+
+// Entidades
+entity Campus {
+    id: int key
+    nome: string
+}
+
+entity Aluno {
+    id: int key
+    nome: string
+    email: string
+}
+
+entity Professor {
+    id: int key
+    nome: string
+    email: string
+}
+
+entity Postagem {
+    id: int key
+    texto: string
+    data: datetime
+}
+
+entity Feed {
+    id: int key
+    nome: string
+}
+
+// Relacionamentos
+relationship possui {
+    Campus[1] -> Aluno[0..N]
+}
+
+relationship contrata {
+    Campus[1] -> Professor[0..N]
+}
+
+relationship cria {
+    Aluno[1] -> Postagem[0..N]
+}
+
+relationship posta {
+    Professor[1] -> Postagem[0..N]
+}
+
+relationship visualiza {
+    Aluno[1] -> Feed[0..N]
+}
+
+relationship olha {
+    Professor[1] -> Feed[0..N]
+}
+
+relationship compoe {
+    Feed[1] -> Postagem[0..N]
+}

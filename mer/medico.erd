@@ -1,0 +1,51 @@
+erdiagram Hospital // Modelo de hospital
+
+// Entidades
+entity Pessoa {
+    id: int key
+    nome: string
+    endereco: string
+}
+
+entity Paciente {
+    id: int key
+    data_nascimento: date
+    sexo: string
+    numero_cartao_sus: string
+}
+
+entity Paciente_Alta_Risco {
+    id: int key
+    data_inicio_alta_risco: date
+    data_fim_alta_risco: date
+} extends Paciente
+
+entity Paciente_Emergencia {
+    id: int key
+    tipo_emergencia: string
+} extends Paciente
+
+entity Medico {
+    id: int key
+    nome: string
+    endereco: string
+    crm: string
+    especialidade: string
+}
+
+entity Teste {
+    id: int key
+    nome: string
+    descricao: string
+    resultado: string
+    data: datetime
+}
+
+// Relacionamentos
+relationship Consulta {
+    Paciente[N] -> Medico[N] : consulta
+}
+
+relationship Realiza {
+    Paciente[N] -> Teste[N] : realiza
+}

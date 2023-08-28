@@ -1,0 +1,26 @@
+erdiagram BasicExample // ER model
+
+//para funcionar instale a extensāo: https://marketplace.visualstudio.com/items?itemName=BIGModelingTools.erdiagram
+// entities
+entity Customer {
+    id: int key
+    name: string
+}
+entity Order {
+    order_number: int key
+    price: double
+}
+
+// one-to-many relationship
+relationship Places {
+    Customer[1] -> Order[N] 
+}
+
+entity Product {
+    id: int key
+    name : string
+}
+
+relationship tem {
+    Product[N] -> Order[N]
+}
