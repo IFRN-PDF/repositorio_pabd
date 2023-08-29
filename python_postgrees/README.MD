@@ -1,6 +1,6 @@
 # Introdução ao PostgreSQL com Python
 
-Olá, jovem desenvolvedor(a)! 🚀 Se você sempre quis mergulhar no mundo dos bancos de dados, está no lugar certo. Neste guia, vou te apresentar ao PostgreSQL e mostrar como interagir com ele usando Python. Vamos lá?
+Olá, jovem desenvolvedor(a)! Vamos juntar o conhecimento de SQL CREATE e python para desenvolver nossa primeira aplicaçāo com acesso a banco de dados.
 
 ## O que é PostgreSQL?
 
