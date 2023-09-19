@@ -1,16 +1,13 @@
 # Importando as bibliotecas necessárias para trabalhar com bancos de dados PostgreSQL.
 import psycopg2
 
-# Definindo as configurações de conexão com o banco de dados.
-# Estas são como a "identidade" do seu banco de dados.
+# Configuração para conexão com o banco de dados
 DB_NAME = "tutorial_db"
 USER = "postgres"
 PASSWORD = ""
 HOST = "localhost"
 PORT = "5432"
 
-# Esta função nos ajuda a conectar ao banco de dados.
-# Pense nela como a chave para entrar na sua "casa" de dados.
 def conectar_db():
     return psycopg2.connect(
         dbname=DB_NAME,
