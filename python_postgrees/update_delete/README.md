@@ -1,5 +1,3 @@
-# README
-
 ## Atualização e Remoção de Registros em PostgreSQL usando Python
 
 Este guia aborda como usar Python para interagir com um banco de dados PostgreSQL, especificamente para atualizar e remover registros. 
