@@ -1,0 +1,33 @@
+<!-- templates/projects_tasks.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Projects and Tasks</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>Project ID</th>
+                <th>Project Name</th>
+                <th>Task Name</th>
+                <th>Task Priority</th>
+                <th>Task Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for project_id, project_name, task_name, task_priority, task_status in projects_tasks %}
+            <tr>
+                <td>{{ project_id }}</td>
+                <td>{{ project_name }}</td>
+                <td>{{ task_name }}</td>
+                <td>{{ task_priority }}</td>
+                <td>{{ task_status }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
