@@ -1,0 +1,17 @@
+<!-- templates/inserir.html -->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Projects and Tasks</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    </head>
+<body>
+    <form action="{{ url_for('inserir') }}" method="post">
+        Nome do Projeto: <input type="text" name="nome"><br>
+        Data de Início: <input type="date" name="data_inicio"><br>
+        Data de Fim: <input type="date" name="data_fim"><br>
+        <input type="submit" value="Inserir Projeto">
+    </form>
+</body>
+</html>

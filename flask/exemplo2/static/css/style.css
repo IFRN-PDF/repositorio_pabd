@@ -13,3 +13,45 @@ th, td {
 th {
     background-color: #f2f2f2;
 }
+
+form {
+    width: 300px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+input[type="text"],
+input[type="date"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+}
+
+/* Classe genérica para botões e links estilizados como botões */
+.button, input[type="submit"] {
+    padding: 10px 15px;
+    background-color: #4CAF50; /* Verde como cor primária para todos os botões */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    margin-right: 5px;
+}
+
+.button:hover, input[type="submit"]:hover {
+    background-color: #45a049; /* Um tom mais escuro de verde no hover */
+}
+
+/* Removendo estilos duplicados */
+.add-button {
+    margin-bottom: 20px;
+    text-align: center;
+}
+

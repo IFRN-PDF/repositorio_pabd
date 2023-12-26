@@ -7,6 +7,9 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
+    <div class="add-button">
+        <a href="{{ url_for('inserir') }}" class="button">Adicionar Novo Projeto</a>
+    </div>
     <table>
         <thead>
             <tr>
@@ -15,6 +18,7 @@
                 <th>Task Name</th>
                 <th>Task Priority</th>
                 <th>Task Status</th>
+                <th>Ações</th>
             </tr>
         </thead>
         <tbody>
@@ -25,6 +29,11 @@
                 <td>{{ task_name }}</td>
                 <td>{{ task_priority }}</td>
                 <td>{{ task_status }}</td>
+                <td>
+                    <a href="{{ url_for('atualizar', id=project_id) }}" class="button">Editar</a>
+                    <a href="{{ url_for('remover', id=project_id) }}" class="button" onclick="return confirm('Tem certeza que deseja remover este projeto?');">Remover</a>
+                </td>
+                </td>
             </tr>
             {% endfor %}
         </tbody>
