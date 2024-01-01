@@ -15,6 +15,8 @@
             <tr>
                 <th>Project ID</th>
                 <th>Project Name</th>
+                <th>Project Begin Date</th>
+                <th>Project End Date</th>
                 <th>Task Name</th>
                 <th>Task Priority</th>
                 <th>Task Status</th>
@@ -22,10 +24,12 @@
             </tr>
         </thead>
         <tbody>
-            {% for project_id, project_name, task_name, task_priority, task_status in projects_tasks %}
+            {% for project_id, project_name, project_begin_date,project_end_game, task_name, task_priority, task_status in projects_tasks %}
             <tr>
                 <td>{{ project_id }}</td>
                 <td>{{ project_name }}</td>
+                <td>{{ project_begin_date }}</td>
+                <td>{{ project_end_game }}</td>
                 <td>{{ task_name }}</td>
                 <td>{{ task_priority }}</td>
                 <td>{{ task_status }}</td>

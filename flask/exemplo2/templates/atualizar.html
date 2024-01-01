@@ -1,16 +1,16 @@
 <!-- templates/atualizar.html -->
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Projects and Tasks</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <title>Atualizar Projeto</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    </head>
 <body>
-    <form action="{{ url_for('atualizar', id=id) }}" method="post">
-        Nome do Projeto: <input type="text" name="nome"><br>
-        Data de Início: <input type="date" name="data_inicio"><br>
-        Data de Fim: <input type="date" name="data_fim"><br>
+    <form action="{{ url_for('atualizar', id=project.id) }}" method="post">
+        Nome do Projeto: <input type="text" name="nome" value="{{ project.name }}"><br>
+        Data de Início: <input type="date" name="data_inicio" value="{{ project.begin_date }}"><br>
+        Data de Fim: <input type="date" name="data_fim" value="{{ project.end_date }}"><br>
         <input type="submit" value="Atualizar Projeto">
     </form>
 </body>

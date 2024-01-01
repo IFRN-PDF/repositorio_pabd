@@ -70,14 +70,29 @@ def get_projects_tasks():
     conn = conectar_db()
     cur = conn.cursor()
     cur.execute("""
-    SELECT projects.id, projects.name, tasks.name, tasks.priority, tasks.status_id
+    SELECT projects.id, projects.name,projects.begin_date,projects.end_date, tasks.name, tasks.priority, tasks.status_id
     FROM projects LEFT
-    JOIN tasks ON projects.id = tasks.project_id
+    JOIN tasks ON projects.id = tasks.project_id order by projects.id
     """)
     projects_tasks = cur.fetchall()
     cur.close()
     conn.close()
     return projects_tasks
+
+def get_project_by_id(project_id):
+    conn = conectar_db()
+    project = None
+    with conn.cursor() as cursor:
+        cursor.execute("SELECT id, name, begin_date, end_date FROM projects WHERE id = %s", (project_id,))
+        row = cursor.fetchone()
+        if row:
+            project = {
+                'id': row[0],
+                'name': row[1],
+                'begin_date': row[2],
+                'end_date': row[3]
+            }
+    return project
 
 def atualizar_project(id, name, begin_date, end_date):
     with conectar_db() as conn:

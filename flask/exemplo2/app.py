@@ -1,6 +1,6 @@
 # app.py
 from flask import Flask, render_template, request, redirect, url_for
-from database import get_projects_tasks, inserir_project, atualizar_project, remover_project
+from database import get_projects_tasks, inserir_project, atualizar_project, remover_project, get_project_by_id
 
 app = Flask(__name__)
 
@@ -17,13 +17,15 @@ def inserir():
 
 @app.route('/atualizar/<int:id>', methods=['GET', 'POST'])
 def atualizar(id):
+    project = get_project_by_id(id)
+    print(project)
     if request.method == 'POST':
         nome = request.form['nome']
         data_inicio = request.form['data_inicio']
         data_fim = request.form['data_fim']
         atualizar_project(id, nome, data_inicio, data_fim)
         return redirect(url_for('projects_list'))
-    return render_template('atualizar.html', id=id)
+    return render_template('atualizar.html', project=project)
 
 @app.route('/remover/<int:id>', methods=['GET', 'POST'])
 def remover(id):
